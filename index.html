@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>RSS Seetha Ramaraju | Portfolio</title>
+  <meta
+    content="Portfolio of RSS Seetha Ramaraju – Computer Science Engineer skilled in Python, HTML, CSS, AWS, and more."
+    name="description" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">SR</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#journey">Journey</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <button aria-label="Toggle menu" class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-glow glow-1"></div>
+    <div class="hero-bg-glow glow-2"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-content" data-animate="fade-up">
+      <div class="hero-greeting">👋 Hello, I'm</div>
+      <h1 class="hero-name">
+        <span class="gradient-text">RSS Seetha Ramaraju</span>
+      </h1>
+      <div class="hero-roles">
+        <span class="role-prefix">I'm a </span>
+        <span class="typing-text" id="typingText"></span>
+        <span class="cursor">|</span>
+      </div>
+      <p class="hero-bio">
+        Passionate Computer Science Engineering student at Lovely Professional University, building clean and scalable
+        solutions with Python, AWS, and Web Technologies.
+      </p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#contact">
+          <i class="fas fa-paper-plane"></i> Get In Touch
+        </a>
+        <a class="btn btn-outline" href="#projects">
+          <i class="fas fa-code"></i> View Projects
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a class="social-icon" href="https://www.linkedin.com/in/rssseetharamaraju/" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a class="social-icon" href="https://github.com/RSSSEETHARAMARAJU" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="social-icon" href="mailto:srisurya9951@gmail.com" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image-wrap" data-animate="fade-left">
+      <div class="hero-img-ring">
+        <div class="hero-img-container">
+          <img alt="RSS Seetha Ramaraju" class="hero-img" id="heroImg"
+            onerror="this.style.display='none'; document.getElementById('heroImgPlaceholder').style.display='flex';"
+            src="assets/profile.jpeg" />
+          <div class="hero-img-placeholder" id="heroImgPlaceholder">
+            <i class="fas fa-user"></i>
+            <span>Your Photo Here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+  <!-- ========== ABOUT ========== -->
+  <section class="section about" id="about">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Get to know me</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+
+        <div class="about-text-col" data-animate="fade-left">
+          <h3 class="about-subtitle">Computer Science Engineer &amp; Tech Enthusiast</h3>
+          <p class="about-para">
+            I'm <strong>RSS Seetha Ramaraju</strong>, a B.Tech Computer Science &amp; Engineering student at
+            <strong>Lovely
+              Professional University</strong> (CGPA: 6.25), passionate about cloud computing, software development, and
+            problem-solving.
+          </p>
+          <p class="about-para">
+            With a foundation in <strong>Python, HTML, CSS</strong> and hands‑on experience in <strong>AWS
+              Cloud</strong>, I love building projects that are both functional and scalable. I continuously strive to
+            bridge academic knowledge with real-world applications.
+          </p>
+
+          <!-- <a class="btn btn-primary" href="resume.pdf" onclick="downloadResume(event)" style="display:inline-flex; margin-top:1.5rem;">
+<i class="fas fa-download"></i> Download Resume
+          </a> -->
+          <a href="resume.pdf" class="btn btn-primary" download="RSS_Seetha_Ramaraju_Resume.pdf"
+            style="display:inline-flex; margin-top:1.5rem;">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== SKILLS ========== -->
+  <section class="section skills" id="skills">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">What I know</span>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+        <!-- Languages -->
+        <div class="skill-category-card" data-animate="fade-up" data-delay="0">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-tag">
+              <i class="fab fa-python"></i> Python
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:80%"></div>
+              </div>
+            </div>
+            <div class="skill-tag">
+              <i class="fab fa-html5"></i> HTML
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:85%"></div>
+              </div>
+            </div>
+            <div class="skill-tag">
+              <i class="fab fa-css3-alt"></i> CSS
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tools / Platforms -->
+        <div class="skill-category-card" data-animate="fade-up" data-delay="100">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-tools"></i></div>
+            <h3>Tools &amp; Platforms</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-tag">
+              <i class="fab fa-aws"></i> AWS
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:70%"></div>
+              </div>
+            </div>
+            <div class="skill-tag">
+              <i class="fas fa-terminal"></i> VS Code
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:90%"></div>
+              </div>
+            </div>
+            <div class="skill-tag">
+              <i class="fas fa-snake" style="display:none"></i>
+              <i class="fas fa-magic"></i> PyCharm
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Soft Skills -->
+        <div class="skill-category-card" data-animate="fade-up" data-delay="200">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-brain"></i></div>
+            <h3>Soft Skills</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-tag softskill"><i class="fas fa-lightbulb"></i> Problem-Solving</div>
+            <div class="skill-tag softskill"><i class="fas fa-sync-alt"></i> Adaptability</div>
+            <div class="skill-tag softskill"><i class="fas fa-chart-line"></i> Analytical Thinking</div>
+            <div class="skill-tag softskill"><i class="fas fa-clock"></i> Time Management</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== PROJECTS ========== -->
+  <section class="section projects" id="projects">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">What I've built</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-animate="fade-up" data-delay="0">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1e3a5f 0%, #0e2a4a 100%);">
+              <i class="fab fa-aws" style="font-size:3rem; color:#f90; margin-bottom:0.5rem;"></i>
+              <span>AWS Project</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-tag">Cloud Computing</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-date"><i class="fas fa-calendar"></i> Nov 2025</span>
+            </div>
+            <h3 class="project-title">AWS Cloud Website Deployment</h3>
+            <p class="project-desc">Leveraged AWS cloud services (EC2 &amp; S3) to deploy a static/dynamic website with
+              secure hosting, security groups, and scalable infrastructure.</p>
+            <div class="project-tech">
+              <span class="tech-badge">Amazon EC2</span>
+              <span class="tech-badge">Amazon S3</span>
+              <span class="tech-badge">AWS</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/RSSSEETHARAMARAJU" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-animate="fade-up" data-delay="150">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a3a2a 0%, #0e2a1a 100%);">
+              <i class="fas fa-gamepad" style="font-size:3rem; color:#4ade80; margin-bottom:0.5rem;"></i>
+              <span>Game Project</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-tag">Python / OOP</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-date"><i class="fas fa-calendar"></i> Nov 2025</span>
+            </div>
+            <h3 class="project-title">Snake Game</h3>
+            <p class="project-desc">Built a graphical Snake Game using Python &amp; Turtle, implementing OOP design with
+              separate classes for snake movement, food spawning, and score tracking.</p>
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">OOP</span>
+              <span class="tech-badge">Turtle Graphics</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/RSSSEETHARAMARAJU" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== JOURNEY ========== -->
+  <section class="section journey" id="journey">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">My path</span>
+        <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+      </div>
+      <!-- Education Timeline -->
+      <div class="journey-block" data-animate="fade-up">
+        <div class="journey-block-title">
+          <div class="journey-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Education</h3>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Lovely Professional University</h4>
+                <span class="timeline-date">Aug 2023 – Present</span>
+              </div>
+              <p class="timeline-subtitle">Bachelor of Technology – Computer Science &amp; Engineering</p>
+              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> CGPA: 6.25  |  <i
+                  class="fas fa-map-marker-alt"></i> Phagwara, Punjab</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Narayana Junior College</h4>
+                <span class="timeline-date">Jun 2021 – May 2023</span>
+              </div>
+              <p class="timeline-subtitle">Intermediate – PCM</p>
+              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> Percentage: 88.8%
+                 |  <i class="fas fa-map-marker-alt"></i> Anakapalle, AP</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Bhashyam High School</h4>
+                <span class="timeline-date">Mar 2020 – May 2021</span>
+              </div>
+              <p class="timeline-subtitle">Matriculation</p>
+              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> Percentage: 99.9%
+                 |  <i class="fas fa-map-marker-alt"></i> Anakapalle, AP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Training -->
+      <div class="journey-block" data-animate="fade-up" data-delay="100">
+        <div class="journey-block-title">
+          <div class="journey-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Training</h3>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot accent-cyan"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>C Programming – CSE Pathshala</h4>
+                <span class="timeline-date">Jun 2025 – Jul 2025</span>
+              </div>
+              <p class="timeline-detail">Engineered a menu-driven ATM simulation system in C. Implemented file handling
+                and PIN validation. Designed transaction history using queue logic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificates & Achievements -->
+      <div class="certs-achievements-row">
+        <!-- Certificates -->
+        <div class="journey-block cert-block" data-animate="fade-right">
+          <div class="journey-block-title">
+            <div class="journey-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Certificates</h3>
+          </div>
+          <div class="cert-grid">
+            <div class="cert-card" id="cert-aws">
+              <div class="cert-img-wrap">
+                <img alt="AWS Certificate" class="cert-img"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  src="assets/cert-aws.jpg" />
+                <div class="cert-placeholder">
+                  <i class="fab fa-aws"></i>
+                  <span>AWS Certificate</span>
+                  <small>Add image here</small>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h4>Amazon Web Services</h4>
+                <span><i class="fas fa-building"></i> AWS</span>
+                <span class="cert-date"><i class="fas fa-calendar"></i> Jan 2026</span>
+              </div>
+            </div>
+            <div class="cert-card" id="cert-social">
+              <div class="cert-img-wrap">
+                <img alt="Social Networks Certificate" class="cert-img"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  src="assets/cert-social.jpg" />
+                <div class="cert-placeholder">
+                  <i class="fas fa-network-wired"></i>
+                  <span>Social Networks</span>
+                  <small>Add image here</small>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h4>Social Networks</h4>
+                <span><i class="fas fa-university"></i> NPTEL IIT Madras</span>
+                <span class="cert-date"><i class="fas fa-calendar"></i> Apr 2025</span>
+              </div>
+            </div>
+            <div class="cert-card" id="cert-html">
+              <div class="cert-img-wrap">
+                <img alt="HTML CSS Certificate" class="cert-img"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  src="assets/cert-html.jpg" />
+                <div class="cert-placeholder">
+                  <i class="fab fa-html5"></i>
+                  <span>HTML &amp; CSS</span>
+                  <small>Add image here</small>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h4>HTML, CSS</h4>
+                <span><i class="fas fa-code"></i> Freecodecamp</span>
+                <span class="cert-date"><i class="fas fa-calendar"></i> Oct 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Achievements -->
+        <div class="journey-block achiev-block" data-animate="fade-left">
+          <div class="journey-block-title">
+            <div class="journey-icon"><i class="fas fa-trophy"></i></div>
+            <h3>Achievements</h3>
+          </div>
+          <div class="achievement-card">
+            <div class="achieve-icon"><i class="fas fa-medal"></i></div>
+            <div class="achieve-content">
+              <div class="achieve-header">
+                <h4>Hackathon</h4>
+                <span class="timeline-date">Mar 2024</span>
+              </div>
+              <p>Participated in the <strong>"Code Off Duty"</strong> Web Hackathon, gaining hands-on experience in web
+                development and team collaboration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Let's talk</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+      </div>
+      <div class="contact-grid">
+        <!-- Connect -->
+        <div class="contact-info" data-animate="fade-right">
+          <h3>Connect With Me</h3>
+          <p class="contact-sub">Feel free to reach out for collaboration, opportunities, or just a friendly hello!</p>
+          <div class="contact-links">
+            <a class="contact-link-card" href="mailto:srisurya9951@gmail.com">
+              <div class="cl-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="cl-label">Email</span>
+                <span class="cl-val">srisurya9951@gmail.com</span>
+              </div>
+            </a>
+            <a class="contact-link-card" href="tel:+917981499951">
+              <div class="cl-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <span class="cl-label">Phone</span>
+                <span class="cl-val">+91 7981499951</span>
+              </div>
+            </a>
+            <a class="contact-link-card" href="https://www.linkedin.com/in/rssseetharamaraju/" target="_blank">
+              <div class="cl-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <span class="cl-label">LinkedIn</span>
+                <span class="cl-val">rssseetharamaraju</span>
+              </div>
+            </a>
+            <a class="contact-link-card" href="https://github.com/RSSSEETHARAMARAJU" target="_blank">
+              <div class="cl-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="cl-label">GitHub</span>
+                <span class="cl-val">RSSSEETHARAMARAJU</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Form -->
+        <div class="contact-form-wrap" data-animate="fade-left">
+          <h3>Send a Message</h3>
+          <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" placeholder="Your name" required="" type="text" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" placeholder="your@email.com" required="" type="email" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" placeholder="What's this about?" required="" type="text" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here..." required=""
+                rows="5"></textarea>
+            </div>
+            <button class="btn btn-primary" id="submitBtn" style="width:100%; justify-content:center;" type="submit">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">SR</div>
+      <p class="footer-text">
+        Made with <span style="color:#ef4444">♥</span> by <strong>RSS Seetha Ramaraju</strong>
+      </p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/rssseetharamaraju/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/RSSSEETHARAMARAJU" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:srisurya9951@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="footer-copy">© 2025 RSS Seetha Ramaraju. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
