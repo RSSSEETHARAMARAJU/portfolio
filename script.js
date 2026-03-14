@@ -2,12 +2,12 @@
 
 // ========== Contact Form – Web3Forms (sends to srisurya9951@gmail.com) ==========
 // Get your FREE access key: https://web3forms.com  → enter your email → check inbox → copy key → paste below
-const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+const WEB3FORMS_KEY = 'fb9b983f-434e-4673-b854-d2384b216f52';
 
 async function handleFormSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
-  const btn  = document.getElementById('submitBtn');
+  const btn = document.getElementById('submitBtn');
   const successBox = document.getElementById('formSuccess');
 
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -19,8 +19,8 @@ async function handleFormSubmit(e) {
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         access_key: WEB3FORMS_KEY,
-        name:    form.name.value,
-        email:   form.email.value,
+        name: form.name.value,
+        email: form.email.value,
         subject: '📬 Portfolio Message: ' + form.subject.value,
         message: form.message.value
       })
@@ -52,20 +52,20 @@ async function handleFormSubmit(e) {
 function downloadResume(e) {
   e.preventDefault();
   fetch('resume.pdf')
-    .then(function(response) { return response.blob(); })
-    .then(function(blob) {
+    .then(function (response) { return response.blob(); })
+    .then(function (blob) {
       var url = window.URL.createObjectURL(blob);
       var a = document.createElement('a');
       a.href = url;
       a.download = 'RSS_Seetha_Ramaraju_Resume.pdf';
       document.body.appendChild(a);
       a.click();
-      setTimeout(function() {
+      setTimeout(function () {
         window.URL.revokeObjectURL(url);
         document.body.removeChild(a);
       }, 200);
     })
-    .catch(function() {
+    .catch(function () {
       // Fallback: direct link
       window.open('resume.pdf', '_blank');
     });
