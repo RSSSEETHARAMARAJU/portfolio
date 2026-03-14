@@ -1,51 +1,17 @@
 /* script.js – Portfolio Interactivity */
 
-// ========== Contact Form – Web3Forms (sends to srisurya9951@gmail.com) ==========
-// Get your FREE access key: https://web3forms.com  → enter your email → check inbox → copy key → paste below
-const WEB3FORMS_KEY = 'fb9b983f-434e-4673-b854-d2384b216f52';
-
-async function handleFormSubmit(e) {
+// ========== Contact Form – placeholder (email platform to be connected) ==========
+function handleFormSubmit(e) {
   e.preventDefault();
-  const form = document.getElementById('contactForm');
   const btn = document.getElementById('submitBtn');
   const successBox = document.getElementById('formSuccess');
-
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-  btn.disabled = true;
-
-  try {
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        name: form.name.value,
-        email: form.email.value,
-        subject: '📬 Portfolio Message: ' + form.subject.value,
-        message: form.message.value
-      })
-    });
-    const data = await res.json();
-
-    if (data.success) {
-      btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-      successBox.style.display = 'flex';
-      form.reset();
-    } else {
-      throw new Error(data.message || 'Failed');
-    }
-  } catch (err) {
-    console.error('Form error:', err);
-    btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed – try again';
-    btn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
-  }
-
+  btn.innerHTML = '<i class="fas fa-check"></i> Message Received!';
+  successBox.style.display = 'flex';
+  document.getElementById('contactForm').reset();
   setTimeout(() => {
     btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    btn.disabled = false;
-    btn.style.background = '';
     successBox.style.display = 'none';
-  }, 5000);
+  }, 4000);
 }
 
 // ========== Resume Download (force correct filename) ==========
