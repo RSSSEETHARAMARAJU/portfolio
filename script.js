@@ -1,10 +1,8 @@
 /* script.js – Portfolio Interactivity */
 
-// ========== EmailJS – Contact Form ==========
-// STEP 1: Replace YOUR_PUBLIC_KEY below with your EmailJS Public Key
-(function () {
-  emailjs.init("YOUR_PUBLIC_KEY");
-})();
+// ========== Contact Form – Web3Forms (sends to srisurya9951@gmail.com) ==========
+// Get your FREE access key: https://web3forms.com  → enter your email → check inbox → copy key → paste below
+const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
 
 async function handleFormSubmit(e) {
   e.preventDefault();
@@ -15,25 +13,29 @@ async function handleFormSubmit(e) {
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   btn.disabled = true;
 
-  // STEP 2: Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID below
-  const serviceID  = 'YOUR_SERVICE_ID';
-  const templateID = 'YOUR_TEMPLATE_ID';
-
-  const templateParams = {
-    from_name:  form.name.value,
-    from_email: form.email.value,
-    subject:    form.subject.value,
-    message:    form.message.value,
-    to_email:   'srisurya9951@gmail.com'
-  };
-
   try {
-    await emailjs.send(serviceID, templateID, templateParams);
-    btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-    successBox.style.display = 'flex';
-    form.reset();
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        name:    form.name.value,
+        email:   form.email.value,
+        subject: '📬 Portfolio Message: ' + form.subject.value,
+        message: form.message.value
+      })
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+      successBox.style.display = 'flex';
+      form.reset();
+    } else {
+      throw new Error(data.message || 'Failed');
+    }
   } catch (err) {
-    console.error('EmailJS error:', err);
+    console.error('Form error:', err);
     btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed – try again';
     btn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
   }
