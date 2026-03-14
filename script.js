@@ -1,6 +1,11 @@
 /* script.js – Portfolio Interactivity */
 
-// ========== Contact Form – sends to srisurya9951@gmail.com via Formsubmit ==========
+// ========== EmailJS – Contact Form ==========
+// STEP 1: Replace YOUR_PUBLIC_KEY below with your EmailJS Public Key
+(function () {
+  emailjs.init("YOUR_PUBLIC_KEY");
+})();
+
 async function handleFormSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
@@ -10,31 +15,25 @@ async function handleFormSubmit(e) {
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   btn.disabled = true;
 
-  const payload = {
-    name:    form.name.value,
-    email:   form.email.value,
-    subject: form.subject.value,
-    message: form.message.value,
-    _subject: '📬 New Portfolio Message from ' + form.name.value,
-    _captcha: 'false'
+  // STEP 2: Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID below
+  const serviceID  = 'YOUR_SERVICE_ID';
+  const templateID = 'YOUR_TEMPLATE_ID';
+
+  const templateParams = {
+    from_name:  form.name.value,
+    from_email: form.email.value,
+    subject:    form.subject.value,
+    message:    form.message.value,
+    to_email:   'srisurya9951@gmail.com'
   };
 
   try {
-    const res = await fetch('https://formsubmit.co/ajax/srisurya9951@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const data = await res.json();
-
-    if (data.success === 'true' || data.success === true) {
-      btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-      successBox.style.display = 'flex';
-      form.reset();
-    } else {
-      throw new Error('Failed');
-    }
-  } catch {
+    await emailjs.send(serviceID, templateID, templateParams);
+    btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+    successBox.style.display = 'flex';
+    form.reset();
+  } catch (err) {
+    console.error('EmailJS error:', err);
     btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed – try again';
     btn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
   }
