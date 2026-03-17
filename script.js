@@ -17,7 +17,7 @@ function handleFormSubmit(e) {
 // ========== Resume Download (force correct filename) ==========
 function downloadResume(e) {
   e.preventDefault();
-  fetch('resume.pdf')
+  fetch('resume.pdf?v=' + new Date().getTime())
     .then(function (response) { return response.blob(); })
     .then(function (blob) {
       var url = window.URL.createObjectURL(blob);
