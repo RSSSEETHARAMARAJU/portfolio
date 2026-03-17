@@ -282,51 +282,6 @@
         <span class="section-tag">My path</span>
         <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
       </div>
-      <!-- Education Timeline -->
-      <div class="journey-block" data-animate="fade-up">
-        <div class="journey-block-title">
-          <div class="journey-icon"><i class="fas fa-graduation-cap"></i></div>
-          <h3>Education</h3>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h4>Lovely Professional University</h4>
-                <span class="timeline-date">Aug 2023 – Present</span>
-              </div>
-              <p class="timeline-subtitle">Bachelor of Technology – Computer Science &amp; Engineering</p>
-              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> CGPA: 6.25  |  <i
-                  class="fas fa-map-marker-alt"></i> Phagwara, Punjab</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h4>Narayana Junior College</h4>
-                <span class="timeline-date">Jun 2021 – May 2023</span>
-              </div>
-              <p class="timeline-subtitle">Intermediate – PCM</p>
-              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> Percentage: 88.8%
-                 |  <i class="fas fa-map-marker-alt"></i> Anakapalle, AP</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h4>Bhashyam High School</h4>
-                <span class="timeline-date">Mar 2020 – May 2021</span>
-              </div>
-              <p class="timeline-subtitle">Matriculation</p>
-              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> Percentage: 99.9%
-                 |  <i class="fas fa-map-marker-alt"></i> Anakapalle, AP</p>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- Training -->
       <div class="journey-block" data-animate="fade-up" data-delay="100">
         <div class="journey-block-title">
@@ -356,11 +311,11 @@
             <h3>Certificates</h3>
           </div>
           <div class="cert-grid">
-            <div class="cert-card" id="cert-aws">
+            <div class="cert-card" id="cert-aws" onclick="openLightbox('assets/cert-aws.png', 'AWS Academy Certificate')">
               <div class="cert-img-wrap">
                 <img alt="AWS Certificate" class="cert-img"
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="assets/cert-aws.jpg" />
+                  src="assets/cert-aws.png" />
                 <div class="cert-placeholder">
                   <i class="fab fa-aws"></i>
                   <span>AWS Certificate</span>
@@ -373,11 +328,11 @@
                 <span class="cert-date"><i class="fas fa-calendar"></i> Jan 2026</span>
               </div>
             </div>
-            <div class="cert-card" id="cert-social">
+            <div class="cert-card" id="cert-social" onclick="openLightbox('assets/cert-social.png', 'Social Networks Certificate')">
               <div class="cert-img-wrap">
                 <img alt="Social Networks Certificate" class="cert-img"
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="assets/cert-social.jpg" />
+                  src="assets/cert-social.png" />
                 <div class="cert-placeholder">
                   <i class="fas fa-network-wired"></i>
                   <span>Social Networks</span>
@@ -390,32 +345,31 @@
                 <span class="cert-date"><i class="fas fa-calendar"></i> Apr 2025</span>
               </div>
             </div>
-            <div class="cert-card" id="cert-html">
+            <div class="cert-card" id="cert-hackathon" onclick="openLightbox('assets/cert-hackathon.png', 'Code Off Duty Hackathon Certificate')">
               <div class="cert-img-wrap">
-                <img alt="HTML CSS Certificate" class="cert-img"
+                <img alt="Code Off Duty Hackathon Certificate" class="cert-img"
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  src="assets/cert-html.jpg" />
+                  src="assets/cert-hackathon.png" />
                 <div class="cert-placeholder">
-                  <i class="fab fa-html5"></i>
-                  <span>HTML &amp; CSS</span>
+                  <i class="fas fa-code"></i>
+                  <span>Hackathon</span>
                   <small>Add image here</small>
                 </div>
               </div>
               <div class="cert-info">
-                <h4>HTML, CSS</h4>
-                <span><i class="fas fa-code"></i> Freecodecamp</span>
-                <span class="cert-date"><i class="fas fa-calendar"></i> Oct 2023</span>
+                <h4>Web Hackathon</h4>
+                <span><i class="fas fa-laptop-code"></i> Code Off Duty</span>
+                <span class="cert-date"><i class="fas fa-calendar"></i> Mar 2024</span>
               </div>
             </div>
           </div>
         </div>
-        <!-- Achievements -->
         <div class="journey-block achiev-block" data-animate="fade-left">
           <div class="journey-block-title">
             <div class="journey-icon"><i class="fas fa-trophy"></i></div>
             <h3>Achievements</h3>
           </div>
-          <div class="achievement-card">
+          <div class="achievement-card" onclick="openLightbox('assets/cert-hackathon.png', 'Code Off Duty Hackathon Certificate')" style="cursor: pointer;">
             <div class="achieve-icon"><i class="fas fa-medal"></i></div>
             <div class="achieve-content">
               <div class="achieve-header">
@@ -427,6 +381,58 @@
             </div>
           </div>
         </div>
+      </div>
+      <!-- Education Timeline -->
+      <div class="journey-block" data-animate="fade-up">
+        <div class="journey-block-title">
+          <div class="journey-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Education</h3>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Lovely Professional University</h4>
+                <span class="timeline-date">Aug 2023 – Present</span>
+              </div>
+              <p class="timeline-subtitle">Bachelor of Technology – Computer Science &amp; Engineering</p>
+              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> CGPA: 6.25  |  <i
+                  class="fas fa-map-marker-alt"></i> Phagwara, Punjab</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Narayana Junior College</h4>
+                <span class="timeline-date">Jun 2021 – May 2023</span>
+              </div>
+              <p class="timeline-subtitle">Intermediate – PCM</p>
+              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> Percentage: 88.8%
+                 |  <i class="fas fa-map-marker-alt"></i> Anakapalle, AP</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Bhashyam High School</h4>
+                <span class="timeline-date">Mar 2020 – May 2021</span>
+              </div>
+              <p class="timeline-subtitle">Matriculation</p>
+              <p class="timeline-detail"><i class="fas fa-star" style="color:#f59e0b"></i> Percentage: 99.9%
+                 |  <i class="fas fa-map-marker-alt"></i> Anakapalle, AP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div id="certLightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
       </div>
     </div>
   </section>

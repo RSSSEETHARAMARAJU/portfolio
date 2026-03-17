@@ -240,3 +240,36 @@ window.addEventListener('load', () => {
     document.body.style.opacity = '1';
   });
 });
+
+// ========== Lightbox Functionality ==========
+function openLightbox(imgSrc, captionText) {
+  const lightbox = document.getElementById('certLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+
+  lightboxImg.src = imgSrc;
+  lightboxCaption.textContent = captionText;
+  lightbox.classList.add('show');
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('certLightbox');
+  lightbox.classList.remove('show');
+  document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+// Close lightbox when clicking outside the image
+window.addEventListener('click', (e) => {
+  const lightbox = document.getElementById('certLightbox');
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+// Close lightbox on Escape key
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
