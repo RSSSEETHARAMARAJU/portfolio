@@ -305,7 +305,7 @@ ul { list-style: none; }
   background: var(--bg-card);
   border: 4px solid var(--bg-primary);
 }
-.hero-img { width:100%; height:100%; object-fit: cover; }
+.hero-img { width:100%; height:100%; object-fit: cover; object-position: center top; }
 .hero-img-placeholder {
   width:100%; height:100%;
   display: flex;
