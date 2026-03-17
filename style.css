@@ -457,7 +457,7 @@ ul { list-style: none; }
 /* --------- SKILLS --------- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 .skill-category-card {
@@ -1053,7 +1053,6 @@ ul { list-style: none; }
 
 /* --------- RESPONSIVE --------- */
 @media (max-width: 1024px) {
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .certs-achievements-row { grid-template-columns: 1fr; }
   .cert-grid { grid-template-columns: repeat(3, 1fr); }
 }
