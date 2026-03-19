@@ -1,18 +1,5 @@
 /* script.js – Portfolio Interactivity */
 
-// ========== Contact Form – placeholder (email platform to be connected) ==========
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  const successBox = document.getElementById('formSuccess');
-  btn.innerHTML = '<i class="fas fa-check"></i> Message Received!';
-  successBox.style.display = 'flex';
-  document.getElementById('contactForm').reset();
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    successBox.style.display = 'none';
-  }, 4000);
-}
 
 // ========== Resume Download (force correct filename) ==========
 function downloadResume(e) {
@@ -211,25 +198,46 @@ function initParticles() {
 }
 
 // ========== Contact Form ==========
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
   e.preventDefault();
+  const form = e.target;
   const btn = document.getElementById('submitBtn');
   const success = document.getElementById('formSuccess');
 
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   btn.disabled = true;
 
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-    success.style.display = 'flex';
-    document.getElementById('contactForm').reset();
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (response.ok) {
+      btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+      success.style.display = 'flex';
+      form.reset();
 
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        btn.disabled = false;
+        success.style.display = 'none';
+      }, 4000);
+    } else {
+      throw new Error('Network response was not ok');
+    }
+  } catch (error) {
+    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+    alert("Oops! There was a problem submitting your form");
+    
     setTimeout(() => {
       btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
       btn.disabled = false;
-      success.style.display = 'none';
     }, 4000);
-  }, 1500);
+  }
 }
 
 // ========== Smooth Reveal on Load ==========
