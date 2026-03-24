@@ -235,9 +235,12 @@
         </div>
         <div class="project-card" data-animate="fade-up" data-delay="150">
           <div class="project-img-wrap">
-            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a3a2a 0%, #0e2a1a 100%);">
+            <img alt="Snake Game" class="project-img"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              src="assets/snake-game.png" />
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a3a2a 0%, #0e2a1a 100%); display: none;">
               <i class="fas fa-gamepad" style="font-size:3rem; color:#4ade80; margin-bottom:0.5rem;"></i>
-              <span>Game Project</span>
+              <span>Snake Game</span>
             </div>
             <div class="project-overlay">
               <span class="project-tag">Python / OOP</span>
