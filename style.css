@@ -730,17 +730,11 @@ ul { list-style: none; }
   color: var(--text-muted);
 }
 
-/* Certs + Achievements row */
-.certs-achievements-row {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
+/* Certificate Grid */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .cert-card {
   background: var(--bg-card);
@@ -1052,11 +1046,6 @@ ul { list-style: none; }
 }
 
 /* --------- RESPONSIVE --------- */
-@media (max-width: 1024px) {
-  .certs-achievements-row { grid-template-columns: 1fr; }
-  .cert-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
 @media (max-width: 768px) {
   .hamburger { display: flex; }
   .nav-links {
